@@ -3450,7 +3450,7 @@ static int msm_compr_audio_effects_config_get(struct snd_kcontrol *kcontrol,
 	}
 #endif
 done:
-    mutex_unclok(&pdata->lock);
+    mutex_unlock(&pdata->lock);
 	return 0;
 }
 
