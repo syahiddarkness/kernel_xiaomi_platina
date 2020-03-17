@@ -9,6 +9,8 @@ install: |
   git clone https://github.com/RomashkaGang/PublishBot ~/PublishBot
   pip3 install --user -r /home/travis/PublishBot/requirements.txt
 before_script: |
+  export KBUILD_BUILD_USER="fedshat"
+  export KBUILD_BUILD_HOST="fedshatci"  
   python3 /home/travis/PublishBot/main.py --before
   export FILENAME="EAS-kernel-$(date +"%y%m%d")-$(date +"%H%M")-GCC"
   sed -i "s#-EAS-kernel#-$FILENAME-Q#g" arch/arm64/configs/platina_defconfig
